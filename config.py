@@ -1,0 +1,5 @@
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:rlink422@127.0.0.1:3306/rlink'
+#测试数据库
+#SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:''@127.0.0.1:3306/rlink'
+#SQLALCHEMY_COMMIT_ON_TEARDOWN = True
+SQLALCHEMY_TRACK_MODIFICATIONS = True
