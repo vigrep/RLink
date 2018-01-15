@@ -1,6 +1,4 @@
-from flask import json
-from flask import jsonify
-from app.ActionResult import DataType
+from app.model.ActionResult import DataType
 
 def to_json(inst, cls):
     """
