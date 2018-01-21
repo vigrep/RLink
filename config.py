@@ -7,13 +7,10 @@ DEBUG = True
 # 正式数据库
 if DEBUG:
     # 测试环境
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:''@127.0.0.1:3306/rlink'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:123456@127.0.0.1:3306/rlink?charset=utf8'
 else:
     # 生产环境
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:rlink422@127.0.0.1:3306/rlink'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:rlink422@127.0.0.1:3306/rlink?charset=utf8'
 
 # SQLALCHEMY_COMMIT_ON_TEARDOWN = True   # 自动提交
 SQLALCHEMY_TRACK_MODIFICATIONS = True
-
-# 数据库迁移文件保存路径
-SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')

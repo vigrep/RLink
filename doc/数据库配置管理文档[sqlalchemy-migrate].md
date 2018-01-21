@@ -1,4 +1,8 @@
-## 数据库管理(MySql)
+## 数据库管理(MySql + PyMySQL + sqlalchemy-migrate)
+> 注：该工程已不使用该方式管理数据库，废弃
+>
+> 推荐使用：[通过MySql + PyMySQL + alembic方式管理数据库](./数据库配置管理文档%5Balembic%5D.md)
+
 本文档包含以下内容：
 1. 搭建数据库环境
 2. 安装数据库操作相关的flask扩展
@@ -27,7 +31,7 @@
 	
 2. 安装数据库迁移扩展:sqlalchemy-migrate
 
-		命令行:pip3 install sqlalchemy-migrate
+		命令行:pip3 install sqlalchemy-migrate[需先安装pbr: pip3 install pbr]
 		PyCharm[IDE]: Setting->Project:xxx -> Project Interpreter: 添加扩展->输入：qlalchemy-migrate
 
 3. 安装python驱动mysql的驱动: PyMySql
@@ -56,3 +60,11 @@ Flask-sqlalchemy会根据Model去创建表，如果存在，就不在去创建
 ### 6. 数据库升级
 运行脚本：db_upgrade.py
 >运行成功：输出当前数据库版本
+
+### 7. MySQL相关指令
+- 查看表结构(包含索引信息)：desc tb_user;
+- 创建数据库本地用户: grant all on *.* to rlink@'localhost' identified by "123456";
+- 创建数据库远程用户: grant all on *.* to rlink@'%' identified by "123456";
+
+
+### Alembic

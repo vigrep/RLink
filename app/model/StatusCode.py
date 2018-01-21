@@ -1,13 +1,20 @@
 """
 状态信息码定义
 """
+from enum import Enum, unique
 
 
-# 成功
-SUCCESS = "00"
+@unique
+class StatusCode(Enum):
 
-# 失败
-FAILED = "30"
+    # 成功
+    SUCCESS = "00"
 
-# 未知
-UNKNOWN = "90"
+    # 操作需要用户确认
+    WAIT_CONFIRM = "A0"
+
+    # 失败
+    FAILED = "30"
+
+    # 未知
+    UNKNOWN = "90"

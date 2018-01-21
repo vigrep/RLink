@@ -23,17 +23,3 @@ def to_json(inst, cls):
     return d
 
 
-# FIXME 统一封装数据
-# 打包数据
-def pack(data, data_type):
-    if data is None or data_type is None:
-        return data
-    if data_type == DataType.OBJECT:
-        return data
-    elif data_type == DataType.LIST_OBJECT:
-        result = list()
-        result.append(data)
-        return result
-    elif data_type == DataType.LIST_DICT:
-        result = list()
-        result.append(data.json())

@@ -65,8 +65,8 @@ class ActionResult:
     # 将必要信息和数据打包成dict, 方便应答层使用jsonify() 转换成json
     def pack(self):
         package = dict()
-        package["action"] = self.action_code
-        package["resp_cd"] = self.status_code
+        package["action"] = self.action_code.value
+        package["resp_cd"] = self.status_code.value
         package["resp_msg_code"] = self.msg_code
         package["resp_msg"] = MsgCode.get_message(self.msg_code)
 

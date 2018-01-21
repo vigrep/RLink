@@ -1,0 +1,27 @@
+初始化alembic:[仅限IDE]
+..\venv\Scripts\alembic.exe init migrations
+
+生成迁移脚本：[仅限IDE]
+..\venv\scripts\alembic.exe revision --autogenerate -m "v1_create_tables"
+
+升级数据库：[仅限IDE]
+..\venv\Scripts\alembic.exe upgrade head
+
+
+MySQL:
+显示字符集：
+SHOW VARIABLES LIKE 'character_set%';
+
+SHOW VARIABLES LIKE 'collation%';
+
+显示创建表的语句:
+show create table table_name;
+
+显示创建数据库语句：
+show create database db_name;
+
+查看表结构：
+desc tb_name;
+
+重启数据库服务:
+service mysqld restart

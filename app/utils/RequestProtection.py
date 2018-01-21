@@ -8,6 +8,7 @@ from app.model import ActionCode
 # 管理员:99 权限列表
 PERMISSIONS_ADMINISTRATOR = [
     ActionCode.ADD_USER,
+    ActionCode.BATCH_ADD_USER_BY_FILE,
     ActionCode.DELETE_USER,
     ActionCode.DELETE_MULTI_USER,
     ActionCode.UPDATE_USER,
@@ -18,6 +19,10 @@ PERMISSIONS_ADMINISTRATOR = [
     ActionCode.DELETE_MULTI_LINK,
     ActionCode.UPDATE_LINK,
     ActionCode.GET_LINKS_BY_PAGE,
+    ActionCode.ADD_CATEGORY,
+    ActionCode.DELETE_CATEGORY,
+    ActionCode.UPDATE_CATEGORY,
+    ActionCode.GET_CATEGORY
 ]
 
 

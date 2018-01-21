@@ -38,6 +38,9 @@ DELETE_FAILED = 17
 # 页数非法
 PAGE_INVALID = 18
 
+# 批量添加时部分成功
+ADD_PART_SUCC = 19
+
 ###################################
 # 用户操作相关 100-199
 ###################################
@@ -56,7 +59,8 @@ USER_IS_NULL = 106
 USER_NAME_IS_NULL = 107
 # 用户密码为空
 USER_PASSWORD_IS_NULL = 108
-
+# 缺少用户ID
+USER_ID_DISMISS = 109
 
 ####################################
 # 链接操作相关 200 - 299
@@ -70,15 +74,28 @@ LINK_IS_NULL = 201
 LINK_INVALID = 202
 # 链接实体不存在
 LINK_NOT_EXIST = 203
-
+# 缺少链接ID
+LINK_ID_DISMISS = 204
 
 ####################################
-# 搜索相关 300 - 399
+# 分类/类别相关 300 - 399
+####################################
+
+# 分类名称为空
+CATEGORY_NAME_IS_NULL = 300
+# 分类ID缺少
+CATEGORY_ID_DISMISS = 301
+# 分类名称重复
+CATEGORY_NAME_DUPLICATE = 302
+# 分类不存在
+CATEGORY_NOT_EXIST = 303
+
+####################################
+# 搜索相关 400 - 499
 ####################################
 
 # 搜索成功
-SEARCH_SUCC = 300
-
+SEARCH_SUCC = 400
 
 ####################################
 # 访问/请求/回应 1000 - 1099
@@ -93,7 +110,7 @@ REQUEST_PARAM_NOT_FOUND = 1002
 # 参数格式错误
 REQUEST_PARAM_ERROR = 1003
 
-
+# 信息码对应的文本信息
 MSG_CODE_DICT = {
     # 常见信息
     SUCCESS: "成功",
@@ -101,6 +118,7 @@ MSG_CODE_DICT = {
     MSG_UNDEFINED: "未定义",
 
     ADD_SUCC: "添加成功",
+    ADD_PART_SUCC: "一部分添加成功",
     ADD_FAILED: "添加失败",
     QUERY_SUCC: "查询成功",
     QUERY_FAILED: "查询失败",
@@ -118,34 +136,25 @@ MSG_CODE_DICT = {
     USER_IS_NULL: "用户信息为空",
     USER_NAME_IS_NULL: "用户名为空",
     USER_PASSWORD_IS_NULL: "用户密码为空",
+    USER_ID_DISMISS: "缺少用户ID",
 
     # 链接相关操作
     LINK_IS_NULL: "链接地址为空",
     LINK_NAME_IS_NULL: "链接名称为空",
     LINK_INVALID: "链接非法",
     LINK_NOT_EXIST: "链接不存在",
+    LINK_ID_DISMISS: "缺少链接ID",
+
+    # 分类/类别相关
+    CATEGORY_ID_DISMISS: "缺少类别ID",
+    CATEGORY_NAME_IS_NULL: "类别名为空",
+    CATEGORY_NAME_DUPLICATE: "类别名重复",
+    CATEGORY_NOT_EXIST: "类别不存在",
 
     REQUEST_DENY: "访问被拒绝",
     REQUEST_PARAM_NOT_FOUND: "缺少参数",
     REQUEST_PARAM_ERROR: "参数错误",
     }
-
-
-SUCC_MSG_CODE_DICT = {
-    ADD_SUCC: "添加成功",
-    QUERY_SUCC: "查询成功",
-    UPDATE_SUCC: "修改成功",
-    DELETE_SUCC: "删除成功",
-    DELETE_FAILED: "删除失败"
-}
-
-
-# 判断某个具体的信息是否是代表成功
-def is_success(msg_code):
-    if msg_code is not None and msg_code in SUCC_MSG_CODE_DICT:
-        return SUCCESS
-    else:
-        return FAILED
 
 
 # 信息码转成字符串
