@@ -65,6 +65,3 @@ Flask-sqlalchemy会根据Model去创建表，如果存在，就不在去创建
 - 查看表结构(包含索引信息)：desc tb_user;
 - 创建数据库本地用户: grant all on *.* to rlink@'localhost' identified by "123456";
 - 创建数据库远程用户: grant all on *.* to rlink@'%' identified by "123456";
-
-
-### Alembic
