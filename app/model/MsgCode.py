@@ -41,6 +41,11 @@ PAGE_INVALID = 18
 # 批量添加时部分成功
 ADD_PART_SUCC = 19
 
+# 用户注册成功
+REGISTER_SUCC = 20
+# 注册失败
+REGISTER_FAILED = 21
+
 ###################################
 # 用户操作相关 100-199
 ###################################
@@ -61,6 +66,16 @@ USER_NAME_IS_NULL = 107
 USER_PASSWORD_IS_NULL = 108
 # 缺少用户ID
 USER_ID_DISMISS = 109
+# 邮箱为空
+EMAIL_IS_NULL = 110
+# 邮箱非法
+EMAIL_IS_INVALID = 111
+# 邮箱已注册
+EMAIL_DUPLICATE = 112
+# 登录成功
+LOGIN_SUCC = 113
+# 登录失败
+LOGIN_FAILED = 114
 
 ####################################
 # 链接操作相关 200 - 299
@@ -110,6 +125,12 @@ REQUEST_PARAM_NOT_FOUND = 1002
 # 参数格式错误
 REQUEST_PARAM_ERROR = 1003
 
+# 参数检查通过
+REQUEST_PARAM_CHECK_VALID = 1004
+
+# 参数检查未通过
+REQUEST_PARAM_CHECK_INVALID = 1005
+
 # 信息码对应的文本信息
 MSG_CODE_DICT = {
     # 常见信息
@@ -137,6 +158,11 @@ MSG_CODE_DICT = {
     USER_NAME_IS_NULL: "用户名为空",
     USER_PASSWORD_IS_NULL: "用户密码为空",
     USER_ID_DISMISS: "缺少用户ID",
+    EMAIL_IS_NULL: "邮箱为空",
+    EMAIL_IS_INVALID: "邮箱账号非法",
+    EMAIL_DUPLICATE: "邮箱已注册",
+    LOGIN_SUCC: "登录成功",
+    LOGIN_FAILED: "登录失败",
 
     # 链接相关操作
     LINK_IS_NULL: "链接地址为空",
@@ -154,6 +180,8 @@ MSG_CODE_DICT = {
     REQUEST_DENY: "访问被拒绝",
     REQUEST_PARAM_NOT_FOUND: "缺少参数",
     REQUEST_PARAM_ERROR: "参数错误",
+    REQUEST_PARAM_CHECK_VALID: "参数检查通过",
+    REQUEST_PARAM_CHECK_INVALID: "参数检查未通过",
     }
 
 

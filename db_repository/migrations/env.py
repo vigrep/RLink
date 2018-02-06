@@ -20,7 +20,13 @@ import sys
 from sqlalchemy import create_engine
 # 定位到app目录
 sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/../../")
-from app import db, app
+
+from app import db, create_app
+
+# FIXME: 升级时再配置，注意运行环境对应不同的配置
+app = create_app('development')
+# app = create_app('testing')
+# app = create_app('production')
 target_metadata = db.metadata
 
 # other values from the config, defined by the needs of env.py,

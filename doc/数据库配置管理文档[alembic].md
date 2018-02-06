@@ -2,7 +2,7 @@
 >使用Alembic进行数据库迁移升级管理
 
 本文档包含以下内容：
-1. 搭建数据库环境
+1. [搭建数据库环境](#1. 搭建数据库环境)
 2. 安装数据库操作相关的flask扩展
 3. 创建数据库
 4. Alembic托管数据库管理: alembic初始化
@@ -150,4 +150,7 @@ def upgrade():
 
 def downgrade():
     op.drop_table('account')
+    
+# 添加列
+op.add_column('tb_user', Column('confirmed', Boolean, server_default=expression.false()))
 ```

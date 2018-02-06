@@ -1,16 +1,45 @@
+"""
+配置
+"""
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
 
-# FIXME debug模式开启
-DEBUG = True
 
-# 正式数据库
-if DEBUG:
-    # 测试环境
+# 基类
+class Config:
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'rlink422rsgzljjtt'
+    MAIL_SERVER = 'smtp.163.com'
+    MAIL_PORT = 465
+    MAIL_USE_TLS = False
+    MAIL_USE_SSL = True
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+
+
+# 开发环境
+class DevelopmentConfig(Config):
+    DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:123456@127.0.0.1:3306/rlink?charset=utf8'
-else:
-    # 生产环境
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:rlink422@127.0.0.1:3306/rlink?charset=utf8'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    MAIL_DEFAULT_SENDER = "yad2206@163.com"
 
-# SQLALCHEMY_COMMIT_ON_TEARDOWN = True   # 自动提交
-SQLALCHEMY_TRACK_MODIFICATIONS = True
+
+# 测试服务器
+class TestingConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:rlink422@127.0.0.1:3306/rlink?charset=utf8'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+
+
+# 正式环境
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rlink:rlink422@127.0.0.1:3306/rlink?charset=utf8'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
+config = {
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
+    'production': ProductionConfig,
+    'default': DevelopmentConfig
+}
+

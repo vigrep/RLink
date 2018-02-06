@@ -1,6 +1,6 @@
-from app.model.ActionResult import DataType
 
-def to_json(inst, cls):
+
+def to_json(inst, cls, ignore_list=list()):
     """
     Jsonify the sql alchemy query result.
     """
@@ -9,6 +9,10 @@ def to_json(inst, cls):
     # and what-not that aren't serializable.
     d = dict()
     for c in cls.__table__.columns:
+        # 跳过需要忽略的字段
+        if ignore_list is not None and len(ignore_list) > 0 and c.name in ignore_list:
+            continue
+
         v = getattr(inst, c.name)
         if c.type in convert.keys() and v is not None:
             try:

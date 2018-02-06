@@ -1,104 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <style>
+        html{
+            width:100%;
+            min-height:100%;
+            height:auto!important;
+        }
+        .page-footer{
+            width:100%;
+            height:64px;
+            line-height:64px;
+            text-align:center;
+            background:#ececec;
+            color:rgba(0, 0, 0, 0.65);
+            padding:0px 50px;
+            font-size:12px;
+            position: fixed;
+            bottom: 0px;
+        }
+    </style>
+    <title>链接测试</title>
+</head>
+<body>
+    <div id="app" style="margin-bottom:100px;"></div>
+    <div class="page-footer">
+        <span>当前用户: {{ current_user.name }}</span><br/>
+        艰难困苦，玉汝于成
+    </div>
+</body>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-    <head>
-        <title>Test Page for the Nginx HTTP Server on Fedora</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <style type="text/css">
-            /*<![CDATA[*/
-            body {
-                background-color: #fff;
-                color: #000;
-                font-size: 0.9em;
-                font-family: sans-serif,helvetica;
-                margin: 0;
-                padding: 0;
-            }
-            :link {
-                color: #c00;
-            }
-            :visited {
-                color: #c00;
-            }
-            a:hover {
-                color: #f50;
-            }
-            h1 {
-                text-align: center;
-                margin: 0;
-                padding: 0.6em 2em 0.4em;
-                background-color: #294172;
-                color: #fff;
-                font-weight: normal;
-                font-size: 1.75em;
-                border-bottom: 2px solid #000;
-            }
-            h1 strong {
-                font-weight: bold;
-                font-size: 1.5em;
-            }
-            h2 {
-                text-align: center;
-                background-color: #3C6EB4;
-                font-size: 1.1em;
-                font-weight: bold;
-                color: #fff;
-                margin: 0;
-                padding: 0.5em;
-                border-bottom: 2px solid #294172;
-            }
-            hr {
-                display: none;
-            }
-            .content {
-                padding: 1em 5em;
-            }
-            .alert {
-                border: 2px solid #000;
-            }
+<!--<script type="text/javascript" src="bundle.js"></script>-->
+<!--<script src="../static/js/vendors.dll.js"></script>-->
+<script type="text/javascript" src="../static/js/bundle.js"></script>
+<script>
 
-            img {
-                border: 2px solid #fff;
-                padding: 2px;
-                margin: 2px;
-            }
-            a:hover img {
-                border: 2px solid #294172;
-            }
-            .logos {
-                margin: 1em;
-                text-align: center;
-            }
-            /*]]>*/
-        </style>
-    </head>
+    window.onhashchange = function(){
+        if(window.location.hash == "#/"){
+            window.location.href = "#/home";
+        }
+    }
 
-    <body>
-        <h1>江南<strong> 皮革厂</strong> 倒闭了!</h1>
-
-        <div class="content">
-            <p>浙江温州浙江温州，江南皮革厂倒闭了。
-			浙江温州最大皮革厂，江南皮革厂倒闭了。
-			原价都是100多200多300多的钱包，统统20块。
-			20块20块统统20块，统统统统统统20块。
-            </p>
-
-            <div class="alert">
-                <h2>Website Administrator</h2>
-                <div class="content">
-                    <p>This is the default <tt>index.html</tt> page that
-                    is distributed with <strong>nginx</strong> on
-                    Fedora.  It is located in
-                    <tt>/usr/share/nginx/html</tt>.</p>
-
-                    <p>You should now put your content in a location of
-                    your choice and edit the <tt>root</tt> configuration
-                    directive in the <strong>nginx</strong>
-                    configuration file
-                    <tt>/etc/nginx/nginx.conf</tt>.</p>
-
-                </div>
-            </div>
-        </div>
-    </body>
+</script>
 </html>

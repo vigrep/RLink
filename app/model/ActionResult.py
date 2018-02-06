@@ -86,9 +86,15 @@ class ActionResult:
         else:
             return package
 
+    def success(self):
+        return self.status_code == StatusCode.SUCCESS
+
+    def failed(self):
+        return self.status_code == StatusCode.FAILED
+
     # FIXME: debug
     # 将必要信息和数据打包成json
-    def pack_to_json(self):
+    def pack_to_response(self):
         package_json = jsonify(self.pack())
         package_json.headers['Access-Control-Allow-Origin'] = '*'
 

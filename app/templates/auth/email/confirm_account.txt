@@ -1,0 +1,6 @@
+亲爱的 {{ user.username }},
+欢迎使用RLink！
+我们已经准备好激活你的账号。我们只是需要确保这是你的邮件地址。
+点击下面的按钮已确认：
+{{ url_for('auth.confirm', token=token, _external=True) }}
+

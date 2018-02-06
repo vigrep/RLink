@@ -1,7 +1,6 @@
 """
-注：改文件只在调试环境下使用Flask自带的服务器时起作用，部署到服务器上时，采用uwsgi托管，该文件失效
+正式服务器部署时，uwsgi配置文件中app参数应该指定的文件
 """
-from app import app
+from app import create_app
 
-app.run(debug = True)
-
+app = create_app('production')

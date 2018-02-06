@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>登录界面</title>
+</head>
+<body>
+  {% if message %}
+  <p style="color:red">{{ message }}</p>
+  {% endif %}
+  <div class="row">
+      <div class="col-md-4">
+          {% import 'bootstrap/wtf.html' as wtf %}
+          {{ wtf.quick_form(form) }}
+      </div>
+  </div>
+  <br>
+  <p>{{ 'New User?' }} <a href="{{ url_for('auth.register') }}">{{ 'Click to Register!' }}</a></p>
+  <p>
+      {{ 'Forgot Your Password?' }}
+{#      <a href="{{ url_for('auth.reset_password_request') }}">{{ 'Click to Reset It' }}</a>#}
+  </p>
+</body>
+</html>
